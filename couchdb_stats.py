@@ -3,6 +3,7 @@ from requests.auth import HTTPBasicAuth
 import requests
 import json
 
+# testing: not accepting parameters, only check on localhost
 r = requests.get('http://localhost:5984/_stats')
 
 
