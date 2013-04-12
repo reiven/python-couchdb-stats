@@ -13,10 +13,10 @@ Python libraries needed
 
 License
 -------
-This package is distributed under BSD License. See also [LICENSE](https://github.com/reiven/pynientos/blob/master/LICENSE)  
+This package is distributed under BSD License. See also [LICENSE](https://github.com/reiven/python-couchdb-stats/blob/master/LICENSE)  
 
 
 
 ----------------------------------------------------------------
 For bug report, feedback, or any other reasons:
-Federico Reiven <reiven AT gmail DOT com>
+Federico Cardoso <reiven AT gmail DOT com>
