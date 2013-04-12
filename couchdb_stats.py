@@ -14,15 +14,31 @@ parser.add_option("-P", "--port",
                     action="store",
                     default="5984",
                     help="default port [5984]")
+parser.add_option("-u", "--username",
+                    dest="username",
+                    action="store_true",
+                    default=False,
+                    help="Username [optional]")
+parser.add_option("-p", "--password",
+                    dest="password",
+                    action="store_true",
+                    default=False,
+                    help="Password [optional]")
+
 (options, args) = parser.parse_args()
 
-# create the url
-r = requests.get(str.join('', ('http://', options.hostname,
-                ':', options.port, '/_stats')))
+# create the url, based on options
+if options.username and options.password:
+    r = requests.get(str.join('', ('http://', options.hostname,
+                    ':', options.port, '/_stats')),
+                    auth=HTTPBasicAuth(options.username, options.password))
+else:
+    r = requests.get(str.join('', ('http://', options.hostname,
+                    ':', options.port, '/_stats')))
 
 # check if the response was valid
 if r.status_code != 200:
-    raise ("connection failed!")
+    raise Exception("connection failed!")
 
 
 def iterator(stats):
