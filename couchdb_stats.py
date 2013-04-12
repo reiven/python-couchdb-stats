@@ -3,9 +3,8 @@ from requests.auth import HTTPBasicAuth
 import requests
 import json
 
-r = requests.get('http://localhost:5984')
+r = requests.get('http://localhost:5984/_stats')
 
-# json iterator
 
 def iterator(stats):
     for master, subdict in stats.iteritems():
