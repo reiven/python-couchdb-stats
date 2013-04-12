@@ -16,12 +16,12 @@ parser.add_option("-P", "--port",
                     help="default port [5984]")
 parser.add_option("-u", "--username",
                     dest="username",
-                    action="store_true",
+                    action="store",
                     default=False,
                     help="Username [optional]")
 parser.add_option("-p", "--password",
                     dest="password",
-                    action="store_true",
+                    action="store",
                     default=False,
                     help="Password [optional]")
 
