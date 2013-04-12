@@ -19,4 +19,4 @@ This package is distributed under BSD License. See also [LICENSE](https://github
 
 ----------------------------------------------------------------
 For bug report, feedback, or any other reasons:
-Federico Cardoso <reiven AT gmail DOT com>
+Federico Cardoso < reiven AT gmail DOT com >
