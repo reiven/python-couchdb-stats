@@ -1,7 +1,8 @@
 # Couchdb Stats Parser
 
 ## Description
-A simple python-powered Couchdb Runtime Statistics Parser, to be used on monitoring/metrics
+A simple python-powered Couchdb Runtime Statistics Parser, to be used on monitoring/metrics.
+
 See the [Official Documentation](http://wiki.apache.org/couchdb/Runtime_Statistics)
 
 
