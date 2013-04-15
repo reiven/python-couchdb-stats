@@ -3,7 +3,7 @@ Couchdb Stats Parser
 
 Description
 -----------
-A simple python-powered Couchdb Runtime Statistics Parse, to be used on monitoring/metrics
+A simple python-powered Couchdb Runtime Statistics Parser, to be used on monitoring/metrics
 
 
 Python libraries needed
@@ -19,4 +19,4 @@ This package is distributed under BSD License. See also [LICENSE](https://github
 
 ----------------------------------------------------------------
 For bug report, feedback, or any other reasons:
-Federico Cardoso < reiven AT gmail DOT com >
+Federico Reiven < reiven AT gmail DOT com >
