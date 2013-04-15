@@ -52,13 +52,23 @@ def iterator(stats):
         for subkey, subvalue in stats[options.group].iteritems():
             for key, value in subvalue.iteritems():
                 if not key == "description":
-                    print ("%s_%s:%s " % (subkey, key, value), end='')
+                    try:
+                        print ("%s_%s:%s " % (subkey, key, int(value)), end='')
+                    except:
+                        print ("%s_%s:%s " % (subkey, key, value), end='')
     else:
         for master, subdict in stats.iteritems():
             for subkey, subvalue in subdict.iteritems():
                 for key, value in subvalue.iteritems():
                     if not key == "description":
-                        print ("%s_%s_%s:%s " % (master, subkey, key, value),
+                        try:
+                            print ("%s_%s_%s:%s " %
+                                (master, subkey, key, int(value)),
+                                end=''
+                                )
+                        except:
+                            print ("%s_%s_%s:%s " %
+                                (master, subkey, key, value),
                                 end=''
                                 )
 
