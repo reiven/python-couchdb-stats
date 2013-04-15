@@ -40,7 +40,7 @@ else:
 
 # check if the response was valid
 if r.status_code != 200:
-    raise Exception("connection failed!")
+    raise Exception("connection failed. response: %s" % r.text)
 
 
 def iterator(stats):
@@ -48,6 +48,8 @@ def iterator(stats):
         for subkey, subvalue in subdict.iteritems():
             for key, value in subvalue.iteritems():
                 if not key == "description":
-                    print ("%s_%s_%s:%s " % (master, subkey, key, value), end='')
+                    print ("%s_%s_%s:%s " % (master, subkey, key, value),
+                            end=''
+                            )
 
 iterator(r.json())
