@@ -10,19 +10,14 @@ See the [Official Documentation](http://wiki.apache.org/couchdb/Runtime_Statisti
 [Requests](http://docs.python-requests.org/en/latest)
 
 ## Usage
-Usage: couchdb_stats.py [-h] [-H hostname] [-P port]
+    couchdb_stats.py [-H hostname] [-P port]
 
     Options:
-      -h, --help            show this help message and exit
-      -H HOSTNAME, --hostname=HOSTNAME
-                        default to localhost
-      -P PORT, --port=PORT  default port [5984]
-      -u USERNAME, --username=USERNAME
-                        Username [optional]
-      -p PASSWORD, --password=PASSWORD
-                        Password [optional]
-      -g GROUP, --group=GROUP
-                        Group (httpd/couchdb) [optional]
+    -H HOSTNAME, --hostname=HOSTNAME  default to localhost
+    -P PORT, --port=PORT  default port [5984]
+    -u USERNAME, --username=USERNAME  Username [optional]
+    -p PASSWORD, --password=PASSWORD  Password [optional]
+    -g GROUP, --group=GROUP  Group (httpd/couchdb) [optional]
 
 ## License
 This package is distributed under BSD License. See also [LICENSE](https://github.com/reiven/python-couchdb-stats/blob/master/LICENSE)  
