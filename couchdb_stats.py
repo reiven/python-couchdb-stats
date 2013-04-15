@@ -1,4 +1,6 @@
+#!/usr/bin/python
 #-*- coding: utf-8 -*-
+from __future__ import print_function
 from requests.auth import HTTPBasicAuth
 import requests
 from optparse import OptionParser
@@ -43,10 +45,9 @@ if r.status_code != 200:
 
 def iterator(stats):
     for master, subdict in stats.iteritems():
-        print "%s: " % master
         for subkey, subvalue in subdict.iteritems():
-            print "    %s: " % subkey
-            for value, key in subvalue.iteritems():
-                print "       %s: %s" % (value, key)
+            for key, value in subvalue.iteritems():
+                if not key == "description":
+                    print ("%s_%s_%s:%s " % (master, subkey, key, value), end='')
 
 iterator(r.json())
