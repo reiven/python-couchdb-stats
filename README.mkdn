@@ -1,18 +1,15 @@
-Couchdb Stats Parser
-========
+# Couchdb Stats Parser
 
-Description
------------
+## Description
 A simple python-powered Couchdb Runtime Statistics Parser, to be used on monitoring/metrics
 See the [Official Documentation](http://wiki.apache.org/couchdb/Runtime_Statistics)
 
 
-Python libraries needed
------------------------
+## Python libraries needed
 [Requests](http://docs.python-requests.org/en/latest)
 
 ## Usage
-Usage: couchdb_stats.py [-h] [-H HOSTNAME] [-P PORT]
+Usage: couchdb_stats.py [-h] [-H hostname] [-P port]
 
 Options:
   -h, --help            show this help message and exit
@@ -26,9 +23,7 @@ Options:
   -g GROUP, --group=GROUP
                         Group (httpd/couchdb) [optional]
 
-
-License
--------
+## License
 This package is distributed under BSD License. See also [LICENSE](https://github.com/reiven/python-couchdb-stats/blob/master/LICENSE)  
 
 
