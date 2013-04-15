@@ -12,16 +12,16 @@ See the [Official Documentation](http://wiki.apache.org/couchdb/Runtime_Statisti
 ## Usage
 Usage: couchdb_stats.py [-h] [-H hostname] [-P port]
 
-Options:
-  -h, --help            show this help message and exit
-  -H HOSTNAME, --hostname=HOSTNAME
+    Options:
+      -h, --help            show this help message and exit
+      -H HOSTNAME, --hostname=HOSTNAME
                         default to localhost
-  -P PORT, --port=PORT  default port [5984]
-  -u USERNAME, --username=USERNAME
+      -P PORT, --port=PORT  default port [5984]
+      -u USERNAME, --username=USERNAME
                         Username [optional]
-  -p PASSWORD, --password=PASSWORD
+      -p PASSWORD, --password=PASSWORD
                         Password [optional]
-  -g GROUP, --group=GROUP
+      -g GROUP, --group=GROUP
                         Group (httpd/couchdb) [optional]
 
 ## License
