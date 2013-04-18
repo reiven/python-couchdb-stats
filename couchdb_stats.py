@@ -33,6 +33,22 @@ def iterator(options, stats):
                                 end=''
                                 )
 
+
+def connToDb(options):
+    # create the url, based on options
+    if options.username and options.password:
+        r = requests.get(str.join('', ('http://', options.hostname,
+                        ':', options.port, '/_stats')),
+                        auth=HTTPBasicAuth(options.username, options.password))
+    else:
+        r = requests.get(str.join('', ('http://', options.hostname,
+                        ':', options.port, '/_stats')))
+    # check if the response was valid
+    if r.status_code != 200:
+        raise Exception("connection failed. response: %s" % r.text)
+
+    return r
+
 if __name__ == '__main__':
 
     parser = OptionParser(usage="usage: %prog [-h] [-H HOSTNAME] [-P PORT]")
@@ -64,17 +80,6 @@ if __name__ == '__main__':
 
     (options, args) = parser.parse_args()
 
-    # create the url, based on options
-    if options.username and options.password:
-        r = requests.get(str.join('', ('http://', options.hostname,
-                        ':', options.port, '/_stats')),
-                        auth=HTTPBasicAuth(options.username, options.password))
-    else:
-        r = requests.get(str.join('', ('http://', options.hostname,
-                        ':', options.port, '/_stats')))
-
-    # check if the response was valid
-    if r.status_code != 200:
-        raise Exception("connection failed. response: %s" % r.text)
+    r = connToDb(options)
 
     iterator(options, r.json())
