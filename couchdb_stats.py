@@ -5,11 +5,11 @@ import requests
 from optparse import OptionParser
 
 
-def iterator(options, stats):
-    if options.group:
-        for subkey, subvalue in stats[options.group].iteritems():
-            for key, value in subvalue.iteritems():
-                if not key == "description":
+def subiterator(substats, master=False):
+    for subkey, subvalue in substats.iteritems():
+        for key, value in subvalue.iteritems():
+            if not key == "description":
+                if not master:
                     try:
                         print ("%s_%s:%s " % (
                             subkey, key, int(value)),
@@ -17,21 +17,25 @@ def iterator(options, stats):
                              )
                     except:
                         print ("%s_%s:%s " % (subkey, key, value), end='')
+                else:
+                    try:
+                        print ("%s_%s_%s:%s " % (
+                            master, subkey, key, int(value)),
+                            end=''
+                            )
+                    except:
+                        print ("%s_%s_%s:%s " %
+                            (master, subkey, key, value),
+                            end=''
+                            )
+
+
+def iterator(options, stats):
+    if options.group:
+        subiterator(stats[options.group])
     else:
         for master, subdict in stats.iteritems():
-            for subkey, subvalue in subdict.iteritems():
-                for key, value in subvalue.iteritems():
-                    if not key == "description":
-                        try:
-                            print ("%s_%s_%s:%s " % (
-                                master, subkey, key, int(value)),
-                                end=''
-                                )
-                        except:
-                            print ("%s_%s_%s:%s " %
-                                (master, subkey, key, value),
-                                end=''
-                                )
+            subiterator(subdict, master)
 
 
 def connToDb(options):
