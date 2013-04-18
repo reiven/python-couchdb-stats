@@ -41,11 +41,11 @@ def iterator(options, stats):
 def connToDb(options):
     # create the url, based on options
     if options.username and options.password:
-        r = requests.get(str.join('', ('http://', options.hostname,
+        r = requests.get(''.join(('http://', options.hostname,
                         ':', options.port, '/_stats')),
                         auth=HTTPBasicAuth(options.username, options.password))
     else:
-        r = requests.get(str.join('', ('http://', options.hostname,
+        r = requests.get(''.join(('http://', options.hostname,
                         ':', options.port, '/_stats')))
     # check if the response was valid
     if r.status_code != 200:
