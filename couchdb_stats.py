@@ -6,6 +6,7 @@ from optparse import OptionParser
 
 
 def subiterator(substats, master=False):
+    """ Second level of iterator, based on use or not of group in parameters"""
     for subkey, subvalue in substats.iteritems():
         for key, value in subvalue.iteritems():
             if not key == "description":
@@ -31,6 +32,7 @@ def subiterator(substats, master=False):
 
 
 def iterator(options, stats):
+    """ Iterate over the server response """
     if options.group:
         subiterator(stats[options.group])
     else:
@@ -39,7 +41,7 @@ def iterator(options, stats):
 
 
 def connToDb(options):
-    # create the url, based on options
+    """ Craft the db connection url based on options"""
     if options.username and options.password:
         r = requests.get(''.join(('http://', options.hostname,
                         ':', options.port, '/_stats')),
